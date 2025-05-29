@@ -17,11 +17,11 @@
 
 ```bash
 # 从 GitHub Packages 安装
-npm install -g @cola/distribute-vue-lib --registry=https://npm.pkg.github.com
+npm install -g @sentimental-cola/distribute-vue-lib --registry=https://npm.pkg.github.com
 
 # 或者配置 .npmrc 后直接安装
-echo "@cola:registry=https://npm.pkg.github.com" >> ~/.npmrc
-npm install -g @cola/distribute-vue-lib
+echo "@sentimental-cola:registry=https://npm.pkg.github.com" >> ~/.npmrc
+npm install -g @sentimental-cola/distribute-vue-lib
 ```
 
 ### 初始化项目
@@ -121,7 +121,7 @@ your-vue-project/
 
 ```json
 {
-  "$schema": "https://github.com/cola/distribute-vue-lib/blob/main/assets/schemas/components.schema.json",
+  "$schema": "https://github.com/sentimental-cola/distribute-vue-lib/blob/main/assets/schemas/components.schema.json",
   "framework": "vue",
   "style": "default",
   "typescript": false,
@@ -179,5 +179,5 @@ MIT License - 查看 [LICENSE](LICENSE) 文件了解详情。
 
 ---
 
-**维护者**: Cola <cola@example.com>  
-**仓库**: https://github.com/cola/distribute-vue-lib 
+**维护者**: sentimental-cola <cola@example.com>  
+**仓库**: https://github.com/sentimental-cola/distribute-vue-lib 
