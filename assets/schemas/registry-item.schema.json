@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DistributeVueLib Registry Item Schema",
+  "description": "Schema for an individual item within the registry/source.json of the Distribute Vue Library.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Unique identifier for the item (e.g., 'button', 'use-formatter')."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["ui", "function"],
+      "description": "Type of the item: 'ui' for Vue components, 'function' for JS/TS utilities or composables."
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title for the item."
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the item."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional keywords for searchability and categorization."
+    },
+    "vueVersion": {
+      "type": "string",
+      "description": "Optional: Minimum Vue version compatibility (e.g., '^3.2.0')."
+    },
+    "dependencies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "NPM package dependencies required by this item (e.g., 'clsx')."
+    },
+    "registryDependencies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Names of other items in this registry that this item depends on."
+    },
+    "files": {
+      "type": "array",
+      "description": "Array of files that constitute this item.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Path to the source file within the library's project structure (e.g., 'src/components/Button/Button.vue')."
+          },
+          "targetPath": {
+            "type": "string",
+            "description": "Optional: Specific target path in the user's project. Can use aliases from components.json. If not provided, defaults based on 'type' and aliases."
+          },
+          "fileType": {
+            "type": "string",
+            "enum": ["component", "script", "style", "asset"],
+            "description": "Type of the file: 'component' (.vue), 'script' (.js/.ts), 'style' (.css), 'asset' (images, etc.)."
+          }
+        },
+        "required": ["path", "fileType"]
+      }
+    },
+    "docsPath": {
+      "type": "string",
+      "description": "Optional: Path to a markdown file for more detailed documentation for this item."
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional: Categories for organization (e.g., 'Forms', 'Navigation')."
+    }
+  },
+  "required": ["name", "type", "title", "files"]
+}

@@ -1,0 +1,30 @@
+<template>
+  <button class="example-button">
+    <slot>Example Button</slot>
+  </button>
+</template>
+
+<script>
+export default {
+  name: 'ExampleButton'
+}
+</script>
+
+<style scoped>
+.example-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.example-button:hover {
+  background-color: #45a049;
+}
+</style>

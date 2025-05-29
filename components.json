@@ -1,0 +1,19 @@
+{
+  "$schema": "../../assets/schemas/components.schema.json",
+  "framework": "vue",
+  "style": "default",
+  "typescript": true,
+  "tailwind": {
+    "configPath": "tailwind.config.js",
+    "cssPath": "src/assets/css/tailwind.css",
+    "baseColor": "slate",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components/ui",
+    "utils": "@/lib/utils",
+    "composables": "@/composables"
+  },
+  "iconLibrary": "lucide-vue-next"
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "../assets/schemas/registry.schema.json",
+  "name": "distribute-vue-lib",
+  "version": "0.0.1",
+  "homepage": "https://example.com/distribute-vue-lib",
+  "items": [
+    {
+      "name": "example-button",
+      "type": "ui",
+      "title": "Example Button",
+      "description": "A simple example button component.",
+      "tags": ["example", "button", "ui"],
+      "vueVersion": "^3.0.0",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ExampleButton/ExampleButton.vue",
+          "fileType": "component"
+        }
+      ],
+      "categories": ["Examples", "Buttons"]
+    },
+    {
+      "name": "use-example-util",
+      "type": "function",
+      "title": "useExampleUtil",
+      "description": "A simple example utility function.",
+      "tags": ["example", "utility", "composable"],
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/utils/useExampleUtil/index.js",
+          "fileType": "script"
+        }
+      ],
+      "categories": ["Examples", "Utilities"]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DistributeVueLib User Configuration Schema",
+  "description": "Schema for the components.json file used to configure the Distribute Vue Library CLI in a user's project.",
+  "type": "object",
+  "properties": {
+    "framework": {
+      "type": "string",
+      "enum": ["vue"],
+      "default": "vue",
+      "description": "Specifies the target framework."
+    },
+    "style": {
+      "type": "string",
+      "description": "Defines the UI style or theme (e.g., 'default').",
+      "default": "default"
+    },
+    "typescript": {
+      "type": "boolean",
+      "description": "Specifies if components/utils should be generated/copied with TypeScript. If true, .vue files might use <script lang='ts'> and utils might be .ts files.",
+      "default": true
+    },
+    "tailwind": {
+      "type": "object",
+      "description": "Tailwind CSS related configurations.",
+      "properties": {
+        "configPath": {
+          "type": "string",
+          "description": "Path to the tailwind.config.js or tailwind.config.ts file.",
+          "default": "tailwind.config.js"
+        },
+        "cssPath": {
+          "type": "string",
+          "description": "Path to the global CSS file where Tailwind directives are imported.",
+          "default": "src/assets/css/tailwind.css"
+        },
+        "baseColor": {
+          "type": "string",
+          "description": "Default base color for Tailwind theming (e.g., 'slate', 'zinc').",
+          "default": "slate"
+        },
+        "cssVariables": {
+          "type": "boolean",
+          "description": "Whether to use CSS variables for theming with Tailwind.",
+          "default": true
+        },
+        "prefix": {
+          "type": "string",
+          "description": "Optional prefix for Tailwind utility classes.",
+          "default": ""
+        }
+      },
+      "required": ["configPath", "cssPath", "baseColor", "cssVariables"]
+    },
+    "aliases": {
+      "type": "object",
+      "description": "Path aliases for resolving component/utility locations.",
+      "properties": {
+        "components": {
+          "type": "string",
+          "description": "Path for UI components.",
+          "default": "@/components/ui"
+        },
+        "utils": {
+          "type": "string",
+          "description": "Path for utility functions.",
+          "default": "@/lib/utils"
+        },
+        "composables": {
+          "type": "string",
+          "description": "Path for composable functions.",
+          "default": "@/composables"
+        }
+      },
+      "required": ["components", "utils"]
+    },
+    "iconLibrary": {
+      "type": "string",
+      "description": "Preferred icon library (e.g., 'lucide-vue-next', 'heroicons').",
+      "default": "lucide-vue-next"
+    }
+  },
+  "required": ["framework", "typescript", "aliases"]
+}

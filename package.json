@@ -1,0 +1,64 @@
+{
+  "name": "@sentimental-cola/distribute-vue-lib",
+  "version": "0.1.0",
+  "description": "A CLI tool to distribute Vue components and utility functions, inspired by shadcn/ui.",
+  "main": "cli/index.js",
+  "bin": {
+    "distribute-cli": "cli/index.js"
+  },
+  "scripts": {
+    "build:registry": "node scripts/build-registry.js",
+    "cli": "node cli/index.js",
+    "prepublishOnly": "npm run build:registry",
+    "publish:github": "node scripts/publish.js",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "components",
+    "utils",
+    "cli",
+    "distribution",
+    "shadcn",
+    "vue3",
+    "component-library"
+  ],
+  "author": "sentimental-cola <cola@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sentimental-cola/distribute-vue-lib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sentimental-cola/distribute-vue-lib/issues"
+  },
+  "homepage": "https://github.com/sentimental-cola/distribute-vue-lib#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "cli/",
+    "scripts/",
+    "dist/",
+    "src/",
+    "registry/",
+    "assets/",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "commander": "^12.1.0",
+    "inquirer": "^9.2.20"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  }
+}
